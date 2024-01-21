@@ -8,6 +8,7 @@ import com.nhnacademy.springjpa.repository.ResidentRepository;
 import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import com.nhnacademy.springjpa.exception.NotFoundResidentException;
 
 @RequiredArgsConstructor
 @Transactional
