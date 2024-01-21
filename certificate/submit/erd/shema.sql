@@ -41,6 +41,8 @@ create table birth_death_report_resident
     primary key (resident_serial_number, birth_death_type_code)
 );
 
+select *from birth_death_report_resident;
+
 create table family_relationship
 (
     base_resident_serial_number   int(11)     not null,

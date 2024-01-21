@@ -9,8 +9,10 @@ import lombok.*;
 @Entity
 @Table(name = "birth_death_report_resident")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class BirthDeathReportResident {
 
     @EmbeddedId
@@ -52,6 +54,16 @@ public class BirthDeathReportResident {
 
         @Column(name = "birth_death_type_code")
         private String birthDeathTypeCode;
+    }
+
+    public void updateReportInfo(String eamilAddress, String phoneNumber){
+        if(eamilAddress != null){
+            this.eamilAddress = eamilAddress;
+        }
+
+        if(phoneNumber != null){
+            this.phoneNumber = phoneNumber;
+        }
     }
 
 
