@@ -3,11 +3,9 @@ package com.nhnacademy.springjpa.entity;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@ToString
 @Entity
 @Table(name = "household_composition_resident")
 @NoArgsConstructor

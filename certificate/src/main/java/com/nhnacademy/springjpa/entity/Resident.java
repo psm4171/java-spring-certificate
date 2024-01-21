@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import javax.persistence.*;
 import lombok.*;
 
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

@@ -2,11 +2,9 @@ package com.nhnacademy.springjpa.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@ToString
 @NoArgsConstructor
 @Entity
 @Table(name = "family_relationship")

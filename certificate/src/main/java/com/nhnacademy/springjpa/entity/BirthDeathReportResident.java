@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 import lombok.*;
 
+
 @Entity
 @Table(name = "birth_death_report_resident")
 @NoArgsConstructor
