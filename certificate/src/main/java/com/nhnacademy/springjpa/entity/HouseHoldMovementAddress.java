@@ -3,16 +3,15 @@ package com.nhnacademy.springjpa.entity;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "household_movement_address")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class HouseHoldMovementAddress {
 
     @EmbeddedId
