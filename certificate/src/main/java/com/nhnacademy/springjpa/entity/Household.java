@@ -3,14 +3,14 @@ package com.nhnacademy.springjpa.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 import javax.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import net.minidev.json.annotate.JsonIgnore;
 
+@Builder
 @Entity
 @Table(name = "household")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class Household {
