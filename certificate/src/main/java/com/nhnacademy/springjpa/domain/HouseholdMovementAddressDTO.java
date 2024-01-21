@@ -1,13 +1,11 @@
 package com.nhnacademy.springjpa.domain;
 
-import com.nhnacademy.springjpa.entity.Resident;
-import java.time.LocalDateTime;
 import java.util.Date;
 import lombok.Getter;
 
 @Getter
-public class HouseHoldMovementAddressDTO {
+public class HouseholdMovementAddressDTO {
     private Long householdSerialNumber;
     private Date houseMovementReportDate;
-    private String houseHoldMovementAddresses;
+    private String householdMovementAddresses;
 }

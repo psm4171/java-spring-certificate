@@ -1,13 +1,14 @@
 package com.nhnacademy.springjpa.repository;
 
+import com.nhnacademy.springjpa.entity.HouseholdMovementAddress;
 import java.util.List;
 import org.springframework.data.repository.NoRepositoryBean;
-import com.nhnacademy.springjpa.entity.HouseHoldMovementAddress;
 
 @NoRepositoryBean
 public interface HouseholdMovementAddressRepositoryCustom {
 
-    HouseHoldMovementAddress getLastMovementAddress(Long householdSerialNumber);
+    HouseholdMovementAddress getLastMovementAddress(Long householdSerialNumber);
 
-    List<HouseHoldMovementAddress> getMovementAddressByResidentSerialNumber(Long residentSerialNumber);
+    List<HouseholdMovementAddress> getMovementAddressByResidentSerialNumber(Long residentSerialNumber);
 }
+

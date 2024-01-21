@@ -39,6 +39,6 @@ public class Household {
 
     @JsonIgnore
     @OneToMany(mappedBy = "household", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
-    private List<HouseHoldMovementAddress> houseHoldMovementAddresses;
+    private List<HouseholdMovementAddress> houseHoldMovementAddresses;
 
 }

@@ -1,7 +1,8 @@
 package com.nhnacademy.springjpa.service;
 
-import com.nhnacademy.springjpa.domain.HouseHoldMovementAddressDTO;
-import com.nhnacademy.springjpa.entity.HouseHoldMovementAddress;
+
+import com.nhnacademy.springjpa.domain.HouseholdMovementAddressDTO;
+import com.nhnacademy.springjpa.entity.HouseholdMovementAddress;
 import com.nhnacademy.springjpa.entity.Household;
 import com.nhnacademy.springjpa.repository.HouseholdMovementAddressRepository;
 import com.nhnacademy.springjpa.repository.HouseholdRepository;
@@ -20,26 +21,27 @@ public class HouseholdMovementAddressServiceImpl implements HouseholdMovementAdd
     private final HouseholdMovementAddressRepository householdMovementAddressRepository;
     @Transactional
     @Override
-    public HouseHoldMovementAddress registerHouseholdMovementAddress(Long householdSerialNumber, HouseHoldMovementAddressDTO houseHoldMovementAddressDTO) {
-        HouseHoldMovementAddress lastMovementAddress = householdMovementAddressRepository.getLastMovementAddress(householdSerialNumber);
+    public HouseholdMovementAddress registerHouseholdMovementAddress(Long householdSerialNumber, HouseholdMovementAddressDTO houseHoldMovementAddressDTO) {
+        HouseholdMovementAddress lastMovementAddress = householdMovementAddressRepository.getLastMovementAddress(householdSerialNumber);
         lastMovementAddress.setLastAddressYn("N");
 
         householdMovementAddressRepository.save(lastMovementAddress);
 
         Household household = householdRepository.findById(householdSerialNumber).orElseThrow(NoSuchElementException::new);
 
-        HouseHoldMovementAddress houseHoldMovementAddress = new HouseHoldMovementAddress().builder()
-                .pk(new HouseHoldMovementAddress.Pk(householdSerialNumber, houseHoldMovementAddressDTO.getHouseMovementReportDate()))
+        HouseholdMovementAddress householdMovementAddress = new HouseholdMovementAddress().builder()
+                .pk(new HouseholdMovementAddress.Pk(householdSerialNumber, houseHoldMovementAddressDTO.getHouseMovementReportDate()))
                 .household(household)
-                .houseMovementAddress(houseHoldMovementAddressDTO.getHouseHoldMovementAddresses())
+                .houseMovementAddress(houseHoldMovementAddressDTO.getHouseholdMovementAddresses())
                 .lastAddressYn("Y")
                 .build();
 
-        return householdMovementAddressRepository.save(houseHoldMovementAddress);
+        return householdMovementAddressRepository.save(householdMovementAddress);
     }
 
+
     @Override
-    public List<HouseHoldMovementAddress> getMovementAddressbyResidentSerialNumber(Long residentSerialNumber) {
+    public List<HouseholdMovementAddress> getMovementAddressByResidentSerialNumber(Long residentSerialNumber) {
         return householdMovementAddressRepository.getMovementAddressByResidentSerialNumber(residentSerialNumber);
     }
 }

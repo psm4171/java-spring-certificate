@@ -55,6 +55,6 @@ public class BirthReportServiceImpl implements BirthReportService{
 
     @Override
     public void deleteBirthReport(Long targetSerialNumber) {
-        birthReportRepository.deleteByPk_ResidentSerialNumberAndPk_BirthDeathTyCode(targetSerialNumber, BIRTH_TYPE);
+        birthReportRepository.deleteByPk_ResidentSerialNumberAndPk_BirthDeathTypeCode(targetSerialNumber, BIRTH_TYPE);
     }
 }

@@ -10,5 +10,5 @@ public interface BirthReportRepository extends JpaRepository<BirthDeathReportRes
     BirthDeathReportResident findByPk_ResidentSerialNumberAndPk_BirthDeathTypeCode(Long residentSerialNumber, String birthDeathType);
 
     @Transactional
-    void deleteByPk_ResidentSerialNumberAndPk_BirthDeathTyCode(Long residentSerialNumber, String birthDeathType);
+    void deleteByPk_ResidentSerialNumberAndPk_BirthDeathTypeCode(Long residentSerialNumber, String birthDeathType);
 }

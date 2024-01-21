@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 import lombok.*;
 
+@ToString
 @Entity
 @Table(name = "household_movement_address")
 @NoArgsConstructor
@@ -12,7 +13,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class HouseHoldMovementAddress {
+public class HouseholdMovementAddress {
 
     @EmbeddedId
     Pk pk;
@@ -29,6 +30,7 @@ public class HouseHoldMovementAddress {
     private String lastAddressYn;
 
 
+    @ToString
     @NoArgsConstructor
     @AllArgsConstructor
     @Getter
