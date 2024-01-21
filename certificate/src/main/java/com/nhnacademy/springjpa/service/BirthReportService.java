@@ -1,4 +1,4 @@
-package com.nhnacademy.springjpa.repository;
+package com.nhnacademy.springjpa.service;
 
 import com.nhnacademy.springjpa.domain.BirthReportDTO;
 import com.nhnacademy.springjpa.entity.BirthDeathReportResident;
