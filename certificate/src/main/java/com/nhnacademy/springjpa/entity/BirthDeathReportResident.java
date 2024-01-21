@@ -15,16 +15,14 @@ public class BirthDeathReportResident {
     @EmbeddedId
     private Pk pk;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "resident_serial_number")
-    private Long residentSerialNumber;
+    @MapsId("residentSerialNumber")
+    @ManyToOne
+    @JoinColumn(name = "resident_serial_number")
+    private Resident resident;
 
-    @Column(name = "birth_death_type_code")
-    private String birthDeathTypeCode;
-
-    @Column(name = "report_resident_serial_number")
-    private Long reportResidentSerialNumber;
+    @ManyToOne
+    @JoinColumn(name = "report_resident_serial_number")
+    private Resident reportResidentSerialNumber;
 
     @Column(name = "birth_death_report_date")
     private Date birthDeathReportDate;
@@ -52,7 +50,7 @@ public class BirthDeathReportResident {
         private Long residentSerialNumber;
 
         @Column(name = "birth_death_type_code")
-        private Long birthDeathTypeCode;
+        private String birthDeathTypeCode;
     }
 
 

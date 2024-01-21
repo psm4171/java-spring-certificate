@@ -1,0 +1,8 @@
+## 등록
+
+POST /residents/{serialNumber}/relationship
+
+{
+    "familySerialNumber": 123,
+    "relationShip": "father"
+}

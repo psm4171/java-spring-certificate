@@ -26,6 +26,8 @@ create table resident
     primary key (resident_serial_number)
 );
 
+select *from resident;
+
 create table birth_death_report_resident
 (
     resident_serial_number           int(11)     not null,

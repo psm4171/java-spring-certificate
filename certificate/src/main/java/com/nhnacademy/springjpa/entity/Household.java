@@ -1,14 +1,12 @@
 package com.nhnacademy.springjpa.entity;
 
-import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import lombok.Data;
+import java.time.LocalDateTime;
+import java.util.List;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import net.minidev.json.annotate.JsonIgnore;
 
 @Entity
 @Table(name = "household")
@@ -18,19 +16,29 @@ import lombok.Setter;
 public class Household {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "household_serial_number")
     private Long householdSerialNumber;
 
-    @Column(name = "household_resident_serial_number")
-    private Long houseHoldResidentSerialNumber;
+    @ManyToOne
+    @JoinColumn(name = "household_resident_serial_number")
+    private Resident houseHoldResidentSerialNumber;
 
     @Column(name = "household_composition_date")
-    private Date houseHoldCompositionDate;
+    private LocalDateTime houseHoldCompositionDate;
 
     @Column(name = "household_composition_reason_code")
     private String householdCompositionReasonCode;
 
     @Column(name = "current_house_movement_address")
     private String currentHouseMovementAddress;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "household", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private List<HouseholdCompositionResident> householdCompositionResidents;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "household", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private List<HouseHoldMovementAddress> houseHoldMovementAddresses;
 
 }
